@@ -1,111 +1,97 @@
-import React from 'react';
-import { MapPin, Mail, Shield } from 'lucide-react';
-// import { portfolioConfig } from '../data/portfolio-config';
+import React from "react";
+import { Sparkles } from "lucide-react";
 
 const HeroSection = () => {
-  const { personal } = {
-    personal: {
-        name: "Fadhil Erdya Qashmal",
-    }
-      };
-
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#2d626a] via-[#428a91] to-[#2d626a]">
-        <div className="absolute inset-0 opacity-20" style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1760813360432-9b5d79eb9679?w=1920')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
-        }}></div>
-        {/* Grid overlay */}
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'linear-gradient(#428a91 1px, transparent 1px), linear-gradient(90deg, #428a91 1px, transparent 1px)',
-          backgroundSize: '50px 50px',
-          opacity: 0.1
-        }}></div>
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
+    >
+      {/* Aesthetic Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1f2937] to-[#0b1120]">
+        {/* Soft color blobs */}
+        <div className="pointer-events-none absolute -top-32 -left-24 h-72 w-72 rounded-full bg-[#38bdf8]/30 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-40 -right-10 h-96 w-96 rounded-full bg-[#22c55e]/25 blur-3xl" />
+        <div className="pointer-events-none absolute top-1/2 left-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#eab308]/10 blur-3xl" />
+
+        {/* Subtle grid overlay */}
+        <div
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage:
+              "linear-gradient(#1f2937 1px, transparent 1px), linear-gradient(90deg, #1f2937 1px, transparent 1px)",
+            backgroundSize: "48px 48px",
+          }}
+        />
+
+        {/* Faint texture */}
+        <div className="absolute inset-0 opacity-20 mix-blend-soft-light"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, rgba(148,163,184,0.4) 1px, transparent 0)",
+            backgroundSize: "3px 3px",
+          }}
+        />
       </div>
 
-      {/* Scan lines effect */}
+      {/* Optional scan-line effect if you already have the CSS */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="scan-line"></div>
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Content */}
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Status Badge */}
-        <div className="inline-flex items-center space-x-2 px-4 py-2 bg-[#428a91]/30 border-2 border-[#eabc3a] backdrop-blur-sm mb-6 animate-pulse-glow">
-          <div className="w-2 h-2 bg-[#eabc3a] rounded-full animate-ping"></div>
-          <span className="text-[#eabc3a] text-sm font-bold tracking-wider">SYSTEM ONLINE</span>
+        <div className="inline-flex items-center space-x-2 px-4 py-2 bg-white/5 border border-[#38bdf8]/50 rounded-full backdrop-blur-md mb-6 animate-pulse-glow">
+          <Sparkles className="w-4 h-4 text-[#eab308]" />
+          <span className="text-xs font-semibold tracking-[0.2em] text-slate-200">
+            CRAFTING CALM, FOCUSED EXPERIENCES
+          </span>
         </div>
 
-        {/* Avatar */}
-        <div className="relative inline-block mb-8">
-          <div className="w-32 h-32 mx-auto relative">
-            <div className="absolute inset-0 border-4 border-[#eabc3a] rotate-45 animate-spin-slow"></div>
-            <img
-              src={personal.avatar}
-              alt={personal.name}
-              className="w-full h-full rounded-full border-4 border-[#6f9c97] object-cover relative z-10"
-            />
-          </div>
-          {/* Rank badge */}
-          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-[#c09317] border-2 border-[#eabc3a] px-3 py-1 flex items-center space-x-1">
-            <Shield className="w-4 h-4 text-[#2d626a]" />
-            <span className="text-[#2d626a] text-xs font-bold">{personal.rank}</span>
-          </div>
-        </div>
-
-        {/* Name and Title */}
-        <h1 className="text-5xl md:text-7xl font-bold text-[#f0f1c7] mb-4 tracking-tight">
-          <span className="inline-block animate-glitch">{personal.name}</span>
+        {/* Main Heading */}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-slate-50 mb-4 tracking-tight leading-tight">
+          <span className="block">
+            Turning scattered ideas into
+          </span>
+          <span className="block mt-1 bg-clip-text text-transparent bg-gradient-to-r from-[#38bdf8] via-[#eab308] to-[#22c55e]">
+            interfaces that actually feel calm.
+          </span>
         </h1>
-        <div className="h-1 w-32 bg-gradient-to-r from-transparent via-[#eabc3a] to-transparent mx-auto mb-6"></div>
-        <h2 className="text-2xl md:text-3xl font-medium text-[#aecdc7] mb-4">{personal.title}</h2>
-        <p className="text-lg text-[#6f9c97] max-w-2xl mx-auto mb-8 leading-relaxed">
-          {personal.tagline}
-        </p>
 
-        {/* Info badges */}
-        <div className="flex flex-wrap justify-center gap-4 mb-8">
-          <div className="flex items-center space-x-2 px-4 py-2 bg-[#2d626a]/50 border border-[#428a91] backdrop-blur-sm">
-            <MapPin className="w-4 h-4 text-[#eabc3a]" />
-            <span className="text-[#aecdc7] text-sm">{personal.location}</span>
-          </div>
-          <div className="flex items-center space-x-2 px-4 py-2 bg-[#2d626a]/50 border border-[#428a91] backdrop-blur-sm">
-            <Mail className="w-4 h-4 text-[#eabc3a]" />
-            <span className="text-[#aecdc7] text-sm">{personal.email}</span>
-          </div>
-        </div>
+        {/* Divider */}
+        <div className="h-px w-28 bg-gradient-to-r from-transparent via-slate-400/70 to-transparent mx-auto my-6" />
 
-        {/* Bio */}
-        <p className="text-[#aecdc7] max-w-3xl mx-auto leading-relaxed mb-12">
-          {personal.bio}
+        {/* Subtext */}
+        <p className="text-base sm:text-lg text-slate-300/80 max-w-2xl mx-auto mb-10 leading-relaxed">
+          Thoughtful layouts, readable typography, and small details that make
+          every interaction feel intentional—without shouting for attention.
         </p>
 
         {/* CTA Buttons */}
         <div className="flex flex-wrap justify-center gap-4">
           <a
             href="#quests"
-            className="group relative px-8 py-3 bg-[#eabc3a] text-[#2d626a] font-bold overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[#eabc3a]/50 hover:-translate-y-1"
+            className="group relative px-8 py-3 rounded-full bg-[#eab308] text-slate-900 font-semibold text-sm sm:text-base tracking-wide overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#eab308]/40"
           >
-            <span className="relative z-10">VIEW QUESTS</span>
-            <div className="absolute inset-0 bg-[#c09317] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+            <span className="relative z-10">Explore the Work</span>
+            <div className="absolute inset-0 bg-[#facc15] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
           </a>
+
           <a
             href="#platforms"
-            className="group relative px-8 py-3 border-2 border-[#aecdc7] text-[#aecdc7] font-bold overflow-hidden transition-all duration-300 hover:text-[#2d626a] hover:-translate-y-1"
+            className="group relative px-8 py-3 rounded-full border border-slate-400/60 text-slate-100 font-semibold text-sm sm:text-base tracking-wide overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:text-slate-900"
           >
-            <span className="relative z-10">CONNECT</span>
-            <div className="absolute inset-0 bg-[#aecdc7] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+            <span className="relative z-10">See How It’s Built</span>
+            <div className="absolute inset-0 bg-slate-100 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
           </a>
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-[#aecdc7] rounded-full flex items-start justify-center p-2">
-          <div className="w-1 h-3 bg-[#eabc3a] rounded-full animate-scroll"></div>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="w-7 h-11 border border-slate-400/70 rounded-full flex items-start justify-center p-2">
+          <div className="w-1 h-3 rounded-full bg-[#eab308] animate-scroll"></div>
         </div>
       </div>
     </section>

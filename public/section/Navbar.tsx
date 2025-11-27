@@ -46,7 +46,7 @@ const Navbar = () => {
             <div className="relative">
               <Terminal className="w-8 h-8 text-[#eabc3a] transition-transform duration-300 group-hover:scale-110" />
               <div className="absolute inset-0 bg-[#eabc3a] blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
-            </div>
+            </div>  
             <span className="text-xl font-bold text-[#f0f1c7] tracking-wider">PORTFOLIO.SYS</span>
           </a>
 
@@ -57,10 +57,10 @@ const Navbar = () => {
                 key={item.label}
                 href={item.href}
                 onClick={(e) => scrollToSection(e, item.href)}
-                className="relative px-4 py-2 text-sm font-medium text-[#aecdc7] hover:text-[#eabc3a] transition-colors duration-300 group"
+                className="relative px-4 py-2 text-sm font-medium text-[#aecdc7]  hover:text-[#eabc3a] transition-colors duration-300 group"
               >
                 <span className="relative z-10">{item.label}</span>
-                <div className="absolute inset-0 bg-[#428a91]/20 scale-0 group-hover:scale-100 transition-transform duration-300 clip-hexagon"></div>
+                <div className="absolute inset-0 bg-[#428a91]/20 scale-0 group-hover:scale-1    00 rounded-3xl transition-transform duration-300 clip-hexagon"></div>
               </a>
             ))}
           </div>
