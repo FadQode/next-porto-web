@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { GraduationCap, Briefcase, Calendar } from "lucide-react";
-
+import Image from 'next/image'
 
 const educationData = [
   {
@@ -10,6 +10,7 @@ const educationData = [
     title: "Muhammadiyah University of Surakarta",
     subtitle: "Informatics Engineering",
     period: "2021 – Present",
+    img_src: "",
     description:
       "Focused on Data, Artificial Intelligence, Machine Learning, and Software Engineering.",
   },
@@ -29,6 +30,7 @@ const experienceData = [
     title: "Computer Laboratory Assistant",
     subtitle: "Faculty of Communication & Informatics",
     period: "2023 – 2024",
+    img_src: "",
     description:
       "Maintained lab systems, assisted practicum sessions, and supported students technically.",
   },
@@ -37,6 +39,7 @@ const experienceData = [
     title: "AI / ML Project Contributor",
     subtitle: "Independent & Academic Projects",
     period: "2024 – Present",
+    img_src: "",
     description:
       "Built and experimented with sentiment analysis, recommendation systems, and data pipelines.",
   },
@@ -47,6 +50,7 @@ type CardProps = {
   title: string;
   subtitle: string;
   period: string;
+  image ?: string;
   description: string;
 };
 
@@ -55,6 +59,7 @@ const SystemTimelineCard = ({
   subtitle,
   period,
   description,
+  image,
 }: CardProps) => {
   return (
     <div
@@ -84,22 +89,36 @@ const SystemTimelineCard = ({
         <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-[#eabc3a] opacity-0 group-hover:opacity-100" />
       </div>
 
-      <div className="relative z-10">
-        <h3 className="text-xl font-bold text-[#f0f1c7] group-hover:text-[#eabc3a] transition-colors">
-          {title}
-        </h3>
+      {/* CONTENT GRID */}
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-[1.6fr_1fr] gap-6 items-start">
+        {/* TEXT */}
+        <div>
+          <h3 className="text-lg font-semibold text-[#f0f1c7] group-hover:text-[#eabc3a] transition-colors">
+            {title}
+          </h3>
 
-        <p className="text-sm text-[#aecdc7] mb-2">{subtitle}</p>
+          <p className="text-sm text-[#aecdc7] mb-1">{subtitle}</p>
 
-        <div className="flex items-center gap-2 text-xs text-[#6f9c97] mb-3">
-          <Calendar className="w-4 h-4" />
-          {period}
+          <div className="text-xs text-[#6f9c97] mb-3">{period}</div>
+
+          <p className="text-sm text-[#aecdc7] leading-relaxed">
+            {description}
+          </p>
         </div>
 
-        <p className="text-sm text-[#aecdc7] leading-relaxed">
-          {description}
-        </p>
-      </div>
+        {/* IMAGE (RIGHT SIDE) */}
+        {/* IMAGE (RIGHT SIDE) */}
+      {image && (
+        <div className="relative h-32 md:h-full border border-[#6f9c97]/40 overflow-hidden">
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-l from-[#2d626a]/70 to-transparent" />
+        </div>
+      )}    </div>
     </div>
   );
 };
