@@ -124,16 +124,22 @@ const SystemTimelineCard = ({
 };
 
 
-const EducationSection = () => {
-  const [activeTab, setActiveTab] = useState<"education" | "experience">(
-    "education"
-  );
+  const EducationSection = () => {
+    const [activeTab, setActiveTab] = useState<"education" | "experience">(
+      "education"
+    );
 
-  const data = activeTab === "education" ? educationData : experienceData;
-  const Icon = activeTab === "education" ? GraduationCap : Briefcase;
+    const data = activeTab === "education" ? educationData : experienceData;
+    const Icon = activeTab === "education" ? GraduationCap : Briefcase;
 
-  return (
-    <section className="relative py-24">
+    return (
+  <section className="
+    relative py-24
+    before:absolute before:inset-0
+    before:bg-teal-900/20
+    before:content-['']
+    before:pointer-events-none
+  ">
       <div className="max-w-6xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">

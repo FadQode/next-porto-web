@@ -7,12 +7,46 @@ const HeroSection = () => {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
     >
+      {/* Animation styles */}
+      <style>{`
+        @keyframes float-slow {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          25% { transform: translate(30px, -20px) scale(1.05); }
+          50% { transform: translate(60px, 10px) scale(1); }
+          75% { transform: translate(20px, 30px) scale(0.95); }
+        }
+
+        @keyframes float-reverse {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          25% { transform: translate(-40px, 20px) scale(1.08); }
+          50% { transform: translate(-20px, -30px) scale(1); }
+          75% { transform: translate(-50px, -10px) scale(0.92); }
+        }
+
+        @keyframes pulse-slow {
+          0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.1; }
+          50% { transform: translate(-50%, -50%) scale(1.15); opacity: 0.15; }
+        }
+
+        .animate-float-slow {
+          animation: float-slow 15s ease-in-out infinite;
+        }
+
+        .animate-float-reverse {
+          animation: float-reverse 18s ease-in-out infinite;
+        }
+
+        .animate-pulse-slow {
+          animation: pulse-slow 8s ease-in-out infinite;
+        }
+      `}</style>
+
       {/* Aesthetic Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1f2937] to-[#0b1120]">
-        {/* Soft color blobs */}
-        <div className="pointer-events-none absolute -top-32 -left-24 h-72 w-72 rounded-full bg-[#38bdf8]/30 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-40 -right-10 h-96 w-96 rounded-full bg-[#22c55e]/25 blur-3xl" />
-        <div className="pointer-events-none absolute top-1/2 left-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#eab308]/10 blur-3xl" />
+        {/* Soft color blobs with animations */}
+        <div className="pointer-events-none absolute -top-32 -left-24 h-72 w-72 rounded-full bg-[#38bdf8]/30 blur-3xl animate-float-slow" />
+        <div className="pointer-events-none absolute -bottom-40 -right-10 h-96 w-96 rounded-full bg-[#22c55e]/25 blur-3xl animate-float-reverse" />
+        <div className="pointer-events-none absolute top-1/2 left-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#eab308]/10 blur-3xl animate-pulse-slow" />
 
         {/* Subtle grid overlay */}
         <div
@@ -52,10 +86,10 @@ const HeroSection = () => {
         {/* Main Heading */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-slate-50 mb-4 tracking-tight leading-tight">
           <span className="block">
-            Turning scattered ideas into
-          </span>
+            Helps Turning Uncertainity
+          </span> 
           <span className="block mt-1 bg-clip-text text-transparent bg-gradient-to-r from-[#38bdf8] via-[#eab308] to-[#22c55e]">
-            interfaces that actually feel calm.
+            finding its Shape
           </span>
         </h1>
 
@@ -64,8 +98,8 @@ const HeroSection = () => {
 
         {/* Subtext */}
         <p className="text-base sm:text-lg text-slate-300/80 max-w-2xl mx-auto mb-10 leading-relaxed">
-          Thoughtful layouts, readable typography, and small details that make
-          every interaction feel intentional—without shouting for attention.
+            Thoughtful layouts, readable typography, and small details that make
+            every interaction feel intentional—without shouting for attention.
         </p>
 
         {/* CTA Buttons */}
@@ -82,7 +116,7 @@ const HeroSection = () => {
             href="#platforms"
             className="group relative px-8 py-3 rounded-full border border-slate-400/60 text-slate-100 font-semibold text-sm sm:text-base tracking-wide overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:text-slate-900"
           >
-            <span className="relative z-10">See How It’s Built</span>
+            <span className="relative z-10">See How It  s Built</span>
             <div className="absolute inset-0 bg-slate-100 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
           </a>
         </div>

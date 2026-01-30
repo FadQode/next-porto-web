@@ -4,7 +4,7 @@ import Navbar from "@/public/section/Navbar";
 import Profile from "@/public/section/Profile";
 import ProjectSection from "@/public/section/Projects";
 import EducationSection from "@/public/section/Education";
-
+import SkillsSection from "@/public/section/skills";
 
 
 const Home = () => {
@@ -14,6 +14,7 @@ const Home = () => {
       <Hero/>
       <Profile/>
       <EducationSection/>
+      <SkillsSection/>
       <ProjectSection/>
 
 
