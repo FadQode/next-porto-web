@@ -1,4 +1,4 @@
-import { skills, SkillConfidence } from '@/public/section-reference/skills';
+import { skills} from '@/public/section-reference/skills';
 
 
 const SkillsSection = () => {

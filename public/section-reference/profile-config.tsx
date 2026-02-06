@@ -26,8 +26,8 @@ export interface ProfileConfig {
 
 export const profileConfig = {
   profile: {
-    name: "Your Name",
-    subtitle: "Informatics Engineering · AI / ML",
+    name: "Fadhil Erdya Qashmal",
+    subtitle: "Informatics Engineering Student & Aspiring AI/ML Engineer",
     description: "Dive into the transformative power of technology.",
     image: "/images/profile.jpg",
   },
