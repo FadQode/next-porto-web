@@ -1,3 +1,5 @@
+import profilePics from "../asset/profile-pics.jpg";
+
 export interface ProfileConfig {
   profile: {
     name: string;
@@ -29,7 +31,7 @@ export const profileConfig = {
     name: "Fadhil Erdya Qashmal",
     subtitle: "Informatics Engineering Student & Aspiring AI/ML Engineer",
     description: "Dive into the transformative power of technology.",
-    image: "/images/profile.jpg",
+    image: "",
   },
 
   techStack: {
@@ -57,3 +59,30 @@ export const profileConfig = {
       "Try new things, discover the differences. It can make your life better and make you think ahead.",
   },
 };
+
+export const slug = [
+  "typescript",
+  "javascript",
+  "java",
+  "react",
+  "android",
+  "html5",
+  "css3",
+  "nodedotjs",
+  "nextdotjs",  
+  "postgresql",
+  "firebase",
+  "vercel",
+  "docker",
+  "git",
+  "clickup",
+  "github",
+  "visualstudiocode",
+  "androidstudio",
+  "figma",
+  "pytorch",
+  "tensorflow",
+  "fastapi",
+  "tailwindcss",
+  "laravel",
+];

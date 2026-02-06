@@ -1,7 +1,8 @@
 import Image from "next/image";
 import clsx from "clsx";
-import {profileConfig} from "@/public/section-reference/profile-config";
+import {profileConfig, slug} from "@/public/section-reference/profile-config";
 import { ReactNode } from "react";
+import  { IconCloud }  from "@/components/ui/icon-cloud";
 
 
 type CardProps = {
@@ -9,6 +10,7 @@ type CardProps = {
   children: React.ReactNode;
   className?: string;
 };
+
 
 
 const SystemCard = ({ title, children, className = "" }: CardProps) => {
@@ -54,15 +56,26 @@ const SystemCard = ({ title, children, className = "" }: CardProps) => {
   );
 };
 
+export function IconCloudDemo() {
+  const images = slug.map(
+    (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`
+  )
+  return (
+    console.log(images),
+    <div className="relative flex items-center justify-center  ">
+      <IconCloud images={images} />
+    </div>
+  )
+}
+
 export default function ProfileSummary() {
   const { profile, techStack, teaching, ability, activity } = profileConfig;
 
   return (
     <section className="relative py-24 overflow-hidden">
-      {/* HERO-CONTINUATION BACKGROUND */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#1f3f44] via-[#2d626a] to-[#2d626a]" />
 
-      {/* subtle texture */}
+
       <div
         className="absolute inset-0 opacity-[0.06]"
         style={{
@@ -73,7 +86,6 @@ export default function ProfileSummary() {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4">
-        {/* Header */}
         <div className="text-center mb-20">
           <div className="inline-block mb-6 px-5 py-2 border border-[#eabc3a]/70 text-[#eabc3a] text-xs tracking-[0.25em] font-semibold">
             SYSTEM PROFILE
@@ -88,9 +100,7 @@ export default function ProfileSummary() {
           </p>
         </div>
 
-        {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Identity */}
           <SystemCard title="IDENTITY">
             <Image
               src={profile.image}
@@ -107,34 +117,13 @@ export default function ProfileSummary() {
             <div className="text-sm text-[#aecdc7] mb-2">
               {profile.subtitle}
             </div>
-
-            <p className="text-sm text-[#aecdc7] leading-relaxed">
-              {profile.description}
-            </p>
           </SystemCard>
 
-          {/* Tech Stack */}
           <SystemCard title={techStack.title}>
-            <p className="text-sm text-[#aecdc7] mb-4 leading-relaxed">
+            <p className="text-sm text-[#aecdc7] leading-relaxed">
               {techStack.description}
             </p>
-
-            <div className="flex flex-wrap gap-2">
-              {techStack.stacks.map((stack) => (
-                <span
-                  key={stack}
-                  className="
-                    px-3 py-1
-                    text-xs
-                    border border-[#6f9c97]/50
-                    bg-[#428a91]/25
-                    text-[#aecdc7]
-                  "
-                >
-                  {stack}
-                </span>
-              ))}
-            </div>
+              <IconCloudDemo />          
           </SystemCard>
 
           {/* Teaching */}
