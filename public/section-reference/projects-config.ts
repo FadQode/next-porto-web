@@ -97,6 +97,7 @@ export const projectConfig: ProjectConfig =  {
       status: "completed",
       technologies: ["Data Analysis", "Python", "Pandas", "Streamlit",],
       githubUrl: "https://github.com/FadQode/Final-Project-DA-Dicoding",
+      liveUrl: "https://fadqode-final-project-da-dicoding-dashboard-r1nmou.streamlit.app/",
       image: analysis,
       completionDate: "2024-08"
     },
