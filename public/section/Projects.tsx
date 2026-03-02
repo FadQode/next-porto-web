@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { Github, ExternalLink, Star, GitFork, GitCommit, Calendar, Check, Clock } from 'lucide-react';
 import {projectConfig} from "@/public/section-reference/projects-config";
+import { profile } from 'console';
 
 
 
@@ -101,13 +103,14 @@ const ProjectSection = () => {
 
               {/* IMAGE */}
               <div className="relative h-48 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+                <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={400}
+                    height={400}
+                    className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                  />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0b1120] to-transparent" />
-
                 {/* STATUS */}
                 <div
                   className={`
@@ -158,21 +161,32 @@ const ProjectSection = () => {
                   </div>
 
                   <div className="flex gap-3">
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="
-                        flex items-center justify-center gap-2 px-4 py-2
-                        border border-[#6f9c97] text-[#aecdc7]
-                        transition hover:border-[#eabc3a] hover:text-[#eabc3a]
-                      "
-                    >
-                      <Github className="w-4 h-4" />
-                      Repo
-                    </a>
-
-                    {project.liveUrl && (
+                      {project.githubUrl ? (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="
+                            flex items-center justify-center gap-2 px-4 py-2
+                            border border-[#6f9c97] text-[#aecdc7]
+                            transition hover:border-[#eabc3a] hover:text-[#eabc3a]
+                          "
+                        >
+                          <Github className="w-4 h-4" />
+                          Repo
+                        </a>
+                      ) : (
+                        <div
+                          className="
+                            flex items-center justify-center gap-2 px-4 py-2
+                            border border-gray-600 text-gray-400
+                            cursor-not-allowed
+                          "
+                        >
+                          <Github className="w-4 h-4" />
+                          Private
+                        </div>
+                      )}        {project.liveUrl && (
                       <a
                         href={project.liveUrl}
                         target="_blank"

@@ -1,5 +1,6 @@
 import React from "react";
 import { Sparkles } from "lucide-react";
+import GradientText from "@/components/GradientText";
 
 const HeroSection = () => {
   return (
@@ -88,9 +89,14 @@ const HeroSection = () => {
           <span className="block">
             Helps Turning Uncertainity
           </span> 
-          <span className="block mt-1 bg-clip-text text-transparent bg-gradient-to-r from-[#38bdf8] via-[#eab308] to-[#22c55e]">
-            finding its Shape
-          </span>
+          <GradientText
+            colors={["#38bdf8", "#eab308", "#22c55e"]}
+            animationSpeed={8}
+            showBorder={false}
+            className="block mt-1"
+          >
+            Finding its Shape
+          </GradientText>
         </h1>
 
         {/* Divider */}
@@ -113,10 +119,10 @@ const HeroSection = () => {
           </a>
 
           <a
-            href="#platforms"
+            href="#education"
             className="group relative px-8 py-3 rounded-full border border-slate-400/60 text-slate-100 font-semibold text-sm sm:text-base tracking-wide overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:text-slate-900"
           >
-            <span className="relative z-10">See How It  s Built</span>
+            <span className="relative z-10">Behind the Journey</span>
             <div className="absolute inset-0 bg-slate-100 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
           </a>
         </div>

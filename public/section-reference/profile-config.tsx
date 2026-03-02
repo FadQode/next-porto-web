@@ -1,4 +1,4 @@
-import profilePics from "../asset/profile-pics.jpg";
+import profilePics from "../asset/profile-pics.png";
 
 export interface ProfileConfig {
   profile: {
@@ -29,9 +29,9 @@ export interface ProfileConfig {
 export const profileConfig = {
   profile: {
     name: "Fadhil Erdya Qashmal",
-    subtitle: "Informatics Engineering Student & Aspiring AI/ML Engineer",
+    subtitle: "Informatics Engineering Graduate & Aspiring to Keep Learning, Studying, and Innvoating",
     description: "Dive into the transformative power of technology.",
-    image: "",
+    image: profilePics,
   },
 
   techStack: {

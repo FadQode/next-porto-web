@@ -1,8 +1,12 @@
+
+'use client';
 import Image from "next/image";
 import clsx from "clsx";
 import {profileConfig, slug} from "@/public/section-reference/profile-config";
 import { ReactNode } from "react";
 import  { IconCloud }  from "@/components/ui/icon-cloud";
+import {GitHubCalendar} from "react-github-calendar";
+
 
 
 type CardProps = {
@@ -72,7 +76,7 @@ export default function ProfileSummary() {
   const { profile, techStack, teaching, ability, activity } = profileConfig;
 
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section id="profile" className="relative py-24 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[#1f3f44] via-[#2d626a] to-[#2d626a]" />
 
 
@@ -118,14 +122,6 @@ export default function ProfileSummary() {
               {profile.subtitle}
             </div>
           </SystemCard>
-
-          <SystemCard title={techStack.title}>
-            <p className="text-sm text-[#aecdc7] leading-relaxed">
-              {techStack.description}
-            </p>
-              <IconCloudDemo />          
-          </SystemCard>
-
           {/* Teaching */}
           <SystemCard title={teaching.title}>
             <div className="text-[#f0f1c7] font-medium mb-1">
@@ -136,20 +132,36 @@ export default function ProfileSummary() {
             </div>
           </SystemCard>
 
-          {/* Ability */}
+          <SystemCard title={techStack.title}>
+            <p className="text-sm text-[#aecdc7] leading-relaxed">
+              {techStack.description}
+            </p>
+              <IconCloudDemo />          
+          </SystemCard>
+
+
+          {/* Ability
           <SystemCard title={ability.title}>
             <p className="text-sm text-[#aecdc7] leading-relaxed">
               {ability.description}
             </p>
-          </SystemCard>
+          </SystemCard> */}
 
           {/* Activity */}
-          <SystemCard title={activity.title} className="md:col-span-2">
+          <SystemCard title={activity.title} className="md:col-span-4">
             <p className="text-sm text-[#aecdc7] mb-5 leading-relaxed">
               {activity.description}
             </p>
 
-            <div className="h-28 bg-[#428a91]/20 border border-[#6f9c97]/40" />
+            <div className="overflow-x-auto">
+              <GitHubCalendar
+                username="FadQode"
+                blockSize={18}
+                blockMargin={4}
+                fontSize={12}
+                colorScheme="dark"
+              />
+            </div>
           </SystemCard>
         </div>
       </div>

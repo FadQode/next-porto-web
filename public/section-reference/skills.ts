@@ -4,7 +4,7 @@ export type Skill = {
   name: string;
   stage: SkillStage;
   note: string;
-  category: 'Frontend' | 'Backend' | 'Database';
+  category: string;
 };
 
 export const skills: Skill[] = [
@@ -33,8 +33,8 @@ export const skills: Skill[] = [
     category: 'Frontend',
   },
   {
-    name: 'Node.js',
-    stage: 'Learning',
+    name: 'Node.js/Bun',
+    stage: 'Using',
     note: 'Exploring backend fundamentals and APIs',
     category: 'Backend',
   },
@@ -51,9 +51,28 @@ export const skills: Skill[] = [
     category: 'Database',
   },
   {
-    name: 'MongoDB',
+    name: 'MySQL  ',
     stage: 'Learning',
-    note: 'Used in simple NoSQL experiments',
+    note: 'Learning relational databases and basic queries',
     category: 'Database',
   },
+  {
+    name: 'PyTorch',
+    stage: 'Using',
+    note: 'Used in machine learning projects and experiments',
+    category: 'Machine Learning',
+  },
+  {
+    name: 'TensorFlow',
+    stage: 'Learning',
+    note: 'Exploring deep learning frameworks and models',
+    category: 'Machine Learning',
+  },
+  {
+    name: 'Laravel',
+    stage: 'Using',
+    note: 'Used in simple NoSQL experiments',
+    category: 'Full Stack',
+  },
+
 ];

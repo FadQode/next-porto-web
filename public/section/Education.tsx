@@ -2,23 +2,31 @@
 
 import React, { useState } from "react";
 import { GraduationCap, Briefcase, Calendar } from "lucide-react";
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
+
+import bangkit from "../asset/bangkit.png";
+import MuslimPergi from "../asset/MulimPergi.jpeg";
+import gemastik from "../asset/Gemastik.jpeg";
+import aslab from "../asset/Aslab.jpeg";
+import { image } from "motion/react-client";
+
 
 const educationData = [
   {
     id: 1,
     title: "Muhammadiyah University of Surakarta",
     subtitle: "Informatics Engineering",
-    period: "2021 – Present",
-    img_src: "",
+    period: "2022 – Present",
+    image: "",
     description:
-      "Focused on Data, Artificial Intelligence, Machine Learning, and Software Engineering.",
+      "Learning Basics and experimenting, Doing Projects, Gaining Experience, Connecting with fellow developers",
   },
   {
     id: 2,
     title: "Bangkit Academy",
     subtitle: "Machine Learning Cohort",
     period: "2024",
+    image: bangkit,
     description:
       "Intensive industry-led program covering ML engineering, teamwork, and product thinking.",
   },
@@ -29,19 +37,28 @@ const experienceData = [
     id: 1,
     title: "Computer Laboratory Assistant",
     subtitle: "Faculty of Communication & Informatics",
-    period: "2023 – 2024",
-    img_src: "",
+    period: "February  2024 – January 2026",
+    image: aslab,
     description:
       "Maintained lab systems, assisted practicum sessions, and supported students technically.",
   },
   {
     id: 2,
-    title: "AI / ML Project Contributor",
+    title: "Muslim Pergi(PT. Muslimina Indo Persada) - Full Stack Web Developer Intern",
     subtitle: "Independent & Academic Projects",
-    period: "2024 – Present",
-    img_src: "",
+    period: "May 2025 – June 2025",
+    image: MuslimPergi,
     description:
-      "Built and experimented with sentiment analysis, recommendation systems, and data pipelines.",
+      "Using Vue to develop Umroh Travel Landing page and Laravel to develop School Management System, collaborating with cross-functional teams, and delivering a functional web application.",
+  },
+  {
+    id: 3,
+    title: "Finalist of GEMASTIK XVII 2025 - Data Mining Competition",
+    subtitle: "Competition",
+    period: "October 2025",
+    image: gemastik,
+    description:
+      "Built and experimented with various cases for various models, including Computer Vision, Tabular Data, Video, even LLM",
   },
 ];
 
@@ -50,7 +67,7 @@ type CardProps = {
   title: string;
   subtitle: string;
   period: string;
-  image ?: string;
+  image ?: StaticImageData | string;
   description: string;
 };
 
@@ -109,15 +126,15 @@ const SystemTimelineCard = ({
         {/* IMAGE (RIGHT SIDE) */}
         {/* IMAGE (RIGHT SIDE) */}
       {image && (
-        <div className="relative h-32 md:h-full border border-[#6f9c97]/40 overflow-hidden">
-          <Image
-            src={image}
-            alt={title}
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-l from-[#2d626a]/70 to-transparent" />
-        </div>
+          <div className="relative w-full h-48 md:h-auto md:min-h-[180px] border border-[#6f9c97]/40 overflow-hidden">
+            <Image
+              src={image}
+              alt={title}
+              fill
+              sizes="(max-width: 768px) 100vw, 40vw"
+              className="object-cover"
+            />
+          </div>
       )}    </div>
     </div>
   );
@@ -133,7 +150,9 @@ const SystemTimelineCard = ({
     const Icon = activeTab === "education" ? GraduationCap : Briefcase;
 
     return (
-  <section className="
+  <section
+    id = "education"
+    className="
     relative py-24
     before:absolute before:inset-0
     before:bg-teal-900/20

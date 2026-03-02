@@ -5,6 +5,7 @@ import Profile from "@/public/section/Profile";
 import ProjectSection from "@/public/section/Projects";
 import EducationSection from "@/public/section/Education";
 import SkillsSection from "@/public/section/skills";
+import Footer from "@/public/section/Footer";
 
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
       <EducationSection/>
       <SkillsSection/>
       <ProjectSection/>
+      <Footer />
 
 
       {/* <PlatformSection />
