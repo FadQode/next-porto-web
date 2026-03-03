@@ -1,8 +1,20 @@
+'use client'
 import React from "react";
 import { Sparkles } from "lucide-react";
 import GradientText from "@/components/GradientText";
 
 const HeroSection = () => {
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, selector: string) => {
+  e.preventDefault();
+
+  const element = document.querySelector(selector);
+  if (element) {
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+};
   return (
     <section
       id="hero"
@@ -103,10 +115,10 @@ const HeroSection = () => {
         <div className="h-px w-28 bg-gradient-to-r from-transparent via-slate-400/70 to-transparent mx-auto my-6" />
 
         {/* Subtext */}
-        <p className="text-base sm:text-lg text-slate-300/80 max-w-2xl mx-auto mb-10 leading-relaxed">
+        {/* <p className="text-base sm:text-lg text-slate-300/80 max-w-2xl mx-auto mb-10 leading-relaxed">
             Thoughtful layouts, readable typography, and small details that make
             every interaction feel intentional—without shouting for attention.
-        </p>
+        </p> */}
 
         {/* CTA Buttons */}
         <div className="flex flex-wrap justify-center gap-4">
@@ -129,12 +141,18 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-7 h-11 border border-slate-400/70 rounded-full flex items-start justify-center p-2">
-          <div className="w-1 h-3 rounded-full bg-[#eab308] animate-scroll"></div>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+          <a
+              href="#profile"
+              onClick={(e) => scrollToSection(e, "#profile")}
+              className="block cursor-pointer"
+            >
+            <div className="w-7 h-11 border border-slate-400/70 rounded-full flex items-start justify-center p-2">
+              <div className="w-1 h-3 rounded-full bg-[#eab308] animate-scroll"></div>
+            </div>
+          </a>
         </div>
-      </div>
-    </section>
+      </section>
   );
 };
 

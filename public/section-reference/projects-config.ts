@@ -6,6 +6,7 @@ import money from "../asset/Project-Pics/siskeu.png";
 import taleshub from "../asset/Project-Pics/TalesHub.png";
 import free from "../asset/Project-Pics/free.jpeg";
 import gfa from "../asset/Project-Pics/gfa.jpeg";
+import gemastik from "../asset/Project-Pics/gemastik.png";
 
 
 
@@ -87,7 +88,7 @@ export const projectConfig: ProjectConfig =  {
       status: "completed",
       technologies: ["Langchain", "LLM", "RAG", "Text Captioning", "Data Mining"],
       githubUrl: "https://github.com/FadQode/Fact-Check-withLLM-RAG",
-      image: taleshub,
+      image: gemastik,
       completionDate: "2025-08"
     },
       {

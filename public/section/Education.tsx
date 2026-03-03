@@ -8,6 +8,7 @@ import bangkit from "../asset/bangkit.png";
 import MuslimPergi from "../asset/MulimPergi.jpeg";
 import gemastik from "../asset/Gemastik.jpeg";
 import aslab from "../asset/Aslab.jpeg";
+import ums from "../asset/ums.jpeg";
 import { image } from "motion/react-client";
 
 
@@ -17,7 +18,7 @@ const educationData = [
     title: "Muhammadiyah University of Surakarta",
     subtitle: "Informatics Engineering",
     period: "2022 – Present",
-    image: "",
+    image:ums ,
     description:
       "Learning Basics and experimenting, Doing Projects, Gaining Experience, Connecting with fellow developers",
   },

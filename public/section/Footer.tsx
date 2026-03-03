@@ -38,7 +38,7 @@ const Footer = () => {
                 </span>
               </div>
               <p className="text-[#aecdc7] leading-relaxed mb-4">
-                Digital portfolio system v1.0.0 - Powered by Firefly Protocol
+                Digital portfolio system v1.0.0 
               </p>
               <div className="flex items-center space-x-2 text-sm text-[#6f9c97]">
                 <span>STATUS:</span>
@@ -55,7 +55,7 @@ const Footer = () => {
                 Quick Access
               </h3>
               <ul className="space-y-2">
-                {['#hero', '#platforms', '#skills', '#quests', '#achievements'].map(
+                {['#hero', '#platforms', '#skills', '#quests'].map(
                   (link, index) => (
                     <li key={index}>
                       <a

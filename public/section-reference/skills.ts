@@ -18,7 +18,7 @@ export const skills: Skill[] = [
     name: 'TypeScript',
     stage: 'Learning',
     note: 'Learning to apply types gradually in projects',
-    category: 'Frontend',
+    category: 'Full Stack',
   },
   {
     name: 'Tailwind CSS',
