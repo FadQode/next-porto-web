@@ -22,6 +22,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en">
+      <meta name="google-site-verification" content="FdvA5ThjvEcp2qucQ8SbRt9UuYEXwizJBZZfLTSv2dY" />
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
