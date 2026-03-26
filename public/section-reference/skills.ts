@@ -9,27 +9,27 @@ export type Skill = {
 
 export const skills: Skill[] = [
   {
+    name: 'Laravel',
+    stage: 'Using',
+    note: 'Used in simple NoSQL experiments',
+    category: 'Full Stack',
+  },
+  {
+    name: 'TypeScript/JavaScript',
+    stage: 'Learning',
+    note: 'Learning to apply types gradually in projects',
+    category: 'Full Stack',
+  },
+  {
     name: 'React / Next.js',
     stage: 'Using',
     note: 'Used in personal projects and this portfolio',
     category: 'Frontend',
   },
   {
-    name: 'TypeScript',
-    stage: 'Learning',
-    note: 'Learning to apply types gradually in projects',
-    category: 'Full Stack',
-  },
-  {
     name: 'Tailwind CSS',
     stage: 'Comfortable',
     note: 'Used to build responsive layouts and components',
-    category: 'Frontend',
-  },
-  {
-    name: 'JavaScript',
-    stage: 'Using',
-    note: 'Primary language for frontend development',
     category: 'Frontend',
   },
   {
@@ -69,10 +69,10 @@ export const skills: Skill[] = [
     category: 'Machine Learning',
   },
   {
-    name: 'Laravel',
-    stage: 'Using',
-    note: 'Used in simple NoSQL experiments',
-    category: 'Full Stack',
+    name: 'Java',
+    stage: 'Learning',
+    note: 'Learning to apply types gradually in projects',
+    category: 'Mobile Development',
   },
 
 ];
