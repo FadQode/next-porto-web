@@ -1,7 +1,9 @@
 'use client';
 
 import React from 'react';
-import { Terminal, Github, Linkedin, Mail, Heart } from 'lucide-react';
+import Image from 'next/image';
+import { Terminal, Github, Linkedin, Mail } from 'lucide-react';
+import { contactLinks, navItems } from '@/lib/content/site';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -55,19 +57,17 @@ const Footer = () => {
                 Quick Access
               </h3>
               <ul className="space-y-2">
-                {['#hero', '#platforms', '#skills', '#quests'].map(
-                  (link, index) => (
-                    <li key={index}>
+                {navItems.map((item) => (
+                    <li key={item.href}>
                       <a
-                        href={link}
+                        href={item.href}
                         className="text-[#aecdc7] hover:text-[#eabc3a] transition-colors duration-300 flex items-center space-x-2 group"
                       >
                         <span className="w-0 h-px bg-[#eabc3a] group-hover:w-4 transition-all duration-300"></span>
-                        <span>{link.replace('#', '').toUpperCase()}</span>
+                        <span>{item.label}</span>
                       </a>
                     </li>
-                  )
-                )}
+                  ))}
               </ul>
             </div>
 
@@ -80,7 +80,7 @@ const Footer = () => {
               <div className="space-y-3">
 
                 <a
-                  href="mailto:fadhileq28@email.com?subject=Let's%20Connect&body=Hi%20Fadhil,"
+                  href={contactLinks.email}
                   className="flex items-center space-x-3 text-[#aecdc7] hover:text-[#eabc3a] transition-colors duration-300 group"
                 >
                   <div className="w-10 h-10 bg-[#428a91]/30 border-2 border-[#6f9c97] flex items-center justify-center group-hover:border-[#eabc3a] transition-colors duration-300">
@@ -90,7 +90,7 @@ const Footer = () => {
                 </a>
 
                 <a
-                  href="https://github.com/FadQode"
+                  href={contactLinks.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-3 text-[#aecdc7] hover:text-[#eabc3a] transition-colors duration-300 group"
@@ -102,7 +102,7 @@ const Footer = () => {
                 </a>
 
                 <a
-                  href="https://id.linkedin.com/in/fadhil-erdya"
+                  href={contactLinks.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-3 text-[#aecdc7] hover:text-[#eabc3a] transition-colors duration-300 group"
@@ -114,15 +114,17 @@ const Footer = () => {
                 </a>
 
                 <a
-                  href="https://huggingface.co/FadQ"
+                  href={contactLinks.huggingFace}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-3 text-[#aecdc7] hover:text-[#eabc3a] transition-colors duration-300 group"
                 >
                   <div className="w-10 h-10 bg-[#428a91]/30 border-2 border-[#6f9c97] flex items-center justify-center group-hover:border-[#eabc3a] transition-colors duration-300">
-                    <img
+                    <Image
                       src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg"
                       alt="Hugging Face"
+                      width={20}
+                      height={20}
                       className="w-5 h-5"
                     />
                   </div>

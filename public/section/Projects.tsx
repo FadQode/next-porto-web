@@ -2,14 +2,13 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Github, ExternalLink, Star, GitFork, GitCommit, Calendar, Check, Clock } from 'lucide-react';
-import {projectConfig} from "@/public/section-reference/projects-config";
-import { profile } from 'console';
+import { Github, ExternalLink, Calendar, Check, Clock } from 'lucide-react';
+import { projectContent } from "@/lib/content/projects";
 
 
 
 const ProjectSection = () => {
-  const { projects } = projectConfig;
+  const projects = projectContent;
   const [filter, setFilter] = useState<"all" | "completed" | "in-progress">(
     "all"
   );

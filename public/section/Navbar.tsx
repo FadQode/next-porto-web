@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Terminal, Phone, Linkedin, Github } from 'lucide-react';
+import { contactLinks, navItems } from '@/lib/content/site';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -13,13 +14,6 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const navItems = [
-    { label: 'HERO', href: '#hero' },
-    { label: 'PROFILE', href: '#profile' },
-    { label: 'SKILLS', href: '#skills' },
-    { label: 'QUESTS', href: '#quests' },
-  ];
 
   const scrollToSection = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
@@ -74,7 +68,7 @@ const Navbar = () => {
             {/* Social Icons */}
             <div className="flex items-center space-x-4">
               <a
-                href="https://wa.me/+6281358301954"
+                href={contactLinks.whatsapp}
                 className="text-[#aecdc7] hover:text-[#eabc3a] hover:scale-110 transition-all duration-300"
                 target="_blank"
               >
@@ -82,7 +76,7 @@ const Navbar = () => {
               </a>
 
               <a
-                href="https://linkedin.com/in/fadhil-erdya"
+                href={contactLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#aecdc7] hover:text-[#eabc3a] hover:scale-110 transition-all duration-300"
@@ -91,7 +85,7 @@ const Navbar = () => {
               </a>
 
               <a
-                href="https://github.com/fadqode"
+                href={contactLinks.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#aecdc7] hover:text-[#eabc3a] hover:scale-110 transition-all duration-300"
@@ -129,14 +123,14 @@ const Navbar = () => {
             {/* Mobile Social Icons */}
             <div className="flex justify-center space-x-6 pt-4 border-t border-[#428a91]">
               <a
-                href="https://wa.me/+6281358301954"
+                href={contactLinks.whatsapp}
                 className="text-[#aecdc7] hover:text-[#eabc3a] hover:scale-110 transition-all duration-300"
               >
                 <Phone size={20} />
               </a>
 
               <a
-                href="https://linkedin.com/in/fadhil-erdya"
+                href={contactLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#aecdc7] hover:text-[#eabc3a] hover:scale-110 transition-all duration-300"
@@ -145,7 +139,7 @@ const Navbar = () => {
               </a>
 
               <a
-                href="https://github.com/fadqode"
+                href={contactLinks.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#aecdc7] hover:text-[#eabc3a] hover:scale-110 transition-all duration-300"

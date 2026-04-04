@@ -1,74 +1,20 @@
 "use client";
 
 import React, { useState } from "react";
-import { GraduationCap, Briefcase, Calendar } from "lucide-react";
-import Image, { StaticImageData } from 'next/image'
-
-import bangkit from "../asset/bangkit.png";
-import MuslimPergi from "../asset/MulimPergi.jpeg";
-import gemastik from "../asset/Gemastik.jpeg";
-import aslab from "../asset/Aslab.jpeg";
-import ums from "../asset/ums.jpeg";
-import { image } from "motion/react-client";
-
-
-const educationData = [
-  {
-    id: 1,
-    title: "Muhammadiyah University of Surakarta",
-    subtitle: "Informatics Engineering",
-    period: "2022 – Present",
-    image:ums ,
-    description:
-      "Learning Basics and experimenting, Doing Projects, Gaining Experience, Connecting with fellow developers",
-  },
-  {
-    id: 2,
-    title: "Bangkit Academy",
-    subtitle: "Machine Learning Cohort",
-    period: "2024",
-    image: bangkit,
-    description:
-      "Intensive industry-led program covering ML engineering, teamwork, and product thinking.",
-  },
-];
-
-const experienceData = [
-  {
-    id: 1,
-    title: "Computer Laboratory Assistant",
-    subtitle: "Faculty of Communication & Informatics",
-    period: "February  2024 – January 2026",
-    image: aslab,
-    description:
-      "Maintained lab systems, assisted practicum sessions, and supported students technically.",
-  },
-  {
-    id: 2,
-    title: "Muslim Pergi(PT. Muslimina Indo Persada) - Full Stack Web Developer Intern",
-    subtitle: "Independent & Academic Projects",
-    period: "May 2025 – June 2025",
-    image: MuslimPergi,
-    description:
-      "Using Vue to develop Umroh Travel Landing page and Laravel to develop School Management System, collaborating with cross-functional teams, and delivering a functional web application.",
-  },
-  {
-    id: 3,
-    title: "Finalist of GEMASTIK XVII 2025 - Data Mining Competition",
-    subtitle: "Competition",
-    period: "October 2025",
-    image: gemastik,
-    description:
-      "Built and experimented with various cases for various models, including Computer Vision, Tabular Data, Video, even LLM",
-  },
-];
+import { GraduationCap, Briefcase } from "lucide-react";
+import Image from "next/image";
+import type { StaticImageData } from "next/image";
+import {
+  educationTimelineContent,
+  experienceTimelineContent,
+} from "@/lib/content/education";
 
 
 type CardProps = {
   title: string;
   subtitle: string;
   period: string;
-  image ?: StaticImageData | string;
+  image?: string | StaticImageData;
   description: string;
 };
 
@@ -147,7 +93,10 @@ const SystemTimelineCard = ({
       "education"
     );
 
-    const data = activeTab === "education" ? educationData : experienceData;
+    const data =
+      activeTab === "education"
+        ? educationTimelineContent
+        : experienceTimelineContent;
     const Icon = activeTab === "education" ? GraduationCap : Briefcase;
 
     return (

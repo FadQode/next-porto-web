@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useMemo, useRef, useState } from "react"
 import { renderToString } from "react-dom/server"
 
 interface Icon {
@@ -23,8 +23,7 @@ function easeOutCubic(t: number): number {
 
 export function IconCloud({ icons, images }: IconCloudProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const [iconPositions, setIconPositions] = useState<Icon[]>([])
-  const [rotation, setRotation] = useState({ x: 0, y: 0 })
+  const [rotation] = useState({ x: 0, y: 0 })
   const [isDragging, setIsDragging] = useState(false)
   const [lastMousePos, setLastMousePos] = useState({ x: 0, y: 0 })
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
@@ -95,7 +94,7 @@ export function IconCloud({ icons, images }: IconCloudProps) {
   }, [icons, images])
 
   // Generate initial icon positions on a sphere
-  useEffect(() => {
+  const iconPositions = useMemo(() => {
     const items = icons || images || []
     const newIcons: Icon[] = []
     const numIcons = items.length || 20
@@ -121,7 +120,7 @@ export function IconCloud({ icons, images }: IconCloudProps) {
         id: i,
       })
     }
-    setIconPositions(newIcons)
+    return newIcons
   }, [icons, images])
 
   // Handle mouse events

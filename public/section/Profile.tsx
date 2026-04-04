@@ -1,9 +1,7 @@
 
 'use client';
 import Image from "next/image";
-import clsx from "clsx";
-import {profileConfig, slug} from "@/public/section-reference/profile-config";
-import { ReactNode } from "react";
+import { profileContent } from "@/lib/content/profile";
 import  { IconCloud }  from "@/components/ui/icon-cloud";
 import {GitHubCalendar} from "react-github-calendar";
 
@@ -61,11 +59,10 @@ const SystemCard = ({ title, children, className = "" }: CardProps) => {
 };
 
 export function IconCloudDemo() {
-  const images = slug.map(
+  const images = profileContent.iconCloudSlugs.map(
     (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`
   )
   return (
-    console.log(images),
     <div className="relative flex items-center justify-center  ">
       <IconCloud images={images} />
     </div>
@@ -73,7 +70,7 @@ export function IconCloudDemo() {
 }
 
 export default function ProfileSummary() {
-  const { profile, techStack, teaching, ability, activity } = profileConfig;
+  const { identity, techStack, teaching, activity } = profileContent;
 
   return (
     <section id="profile" className="relative py-24 overflow-hidden">
@@ -107,19 +104,19 @@ export default function ProfileSummary() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <SystemCard title="IDENTITY">
             <Image
-              src={profile.image}
-              alt={profile.name}
+              src={identity.image}
+              alt={identity.name}
               width={400}
               height={400}
               className="mb-4 border border-[#6f9c97]/50 object-cover"
             />
 
             <div className="text-lg font-semibold text-[#f0f1c7]">
-              {profile.name}
+              {identity.name}
             </div>
 
             <div className="text-sm text-[#aecdc7] mb-2">
-              {profile.subtitle}
+              {identity.subtitle}
             </div>
           </SystemCard>
           {/* Teaching */}
@@ -155,7 +152,7 @@ export default function ProfileSummary() {
 
             <div className="overflow-x-auto">
               <GitHubCalendar
-                username="FadQode"
+                username={activity.githubUsername}
                 blockSize={18}
                 blockMargin={4}
                 fontSize={12}
