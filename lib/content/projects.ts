@@ -129,7 +129,8 @@ export const projectContent: Project[] = [
       "Landing page for a travel agency specializing in Umrah packages.",
     status: "completed",
     technologies: ["Vue.js", "Tailwind CSS", "TypeScript"],
-    githubUrl: "https://github.com/FadQode/Umrah-Travel-Landing-Page",
+    githubUrl: "https://github.com/Josumaru/muslimpergi-demo-replica",
+    liveUrl: "https://muslimpergi.vercel.app/",
     image: umrahTravel,
     completionDate: "2025-06",
 
