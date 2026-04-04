@@ -85,7 +85,7 @@ export const projectContent: Project[] = [
     githubUrl: "https://github.com/FadQode/skripsi-modelling",
     liveUrl: "https://huggingface.co/spaces/FadQ/skripsi-clo-subClo-ALignment-Measure",
     image: cloSubClo,
-    completionDate: "2024-06",
+    completionDate: "2026-01",
   },
   {
     id: 6,
@@ -96,7 +96,7 @@ export const projectContent: Project[] = [
     technologies: ["Langchain", "LLM", "RAG", "Text Captioning", "Data Mining"],
     githubUrl: "https://github.com/FadQode/Fact-Check-withLLM-RAG",
     image: gemastik,
-    completionDate: "2025-08",
+    completionDate: "2025-07",
   },
   {
     id: 7,
@@ -120,7 +120,7 @@ export const projectContent: Project[] = [
     githubUrl:
       "https://www.figma.com/proto/uHTuOnFtBpojsIYwYBsgue/TalesHub-IMK-Assignment?node-id=63-245&starting-point-node-id=41%3A189&t=asK5xotM4RGn6Lbu-1",
     image: taleshub,
-    completionDate: "2024-08",
+    completionDate: "2025-10",
   },
   {
     id: 9,
