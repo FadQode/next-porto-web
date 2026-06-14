@@ -50,7 +50,7 @@ export const projectContent: Project[] = [
     title: "Elementary School Money Management System",
     description:
       "School money management dashboard focused on clear finance operations.",
-    status: "in-progress",
+    status: "completed",
     technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Figma"],
     githubUrl: "",
     image: moneyManagement,

@@ -2,36 +2,19 @@
 
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ArrowDownToLine, ArrowUpRight, Circle } from "lucide-react";
+import {
+  ArrowDownToLine,
+  ArrowUpRight,
+  Circle,
+  Github,
+  Linkedin,
+  Mail,
+} from "lucide-react";
 import { profileContent } from "@/lib/content/profile";
+import { contactLinks } from "@/lib/content/site";
 
 const SCRAMBLE_CHARS =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%";
-
-function useLocalTime() {
-  const [time, setTime] = useState("--:--:--");
-
-  useEffect(() => {
-    const formatTime = () =>
-      new Date().toLocaleTimeString("en-US", {
-        timeZone: "Asia/Jakarta",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: true,
-      });
-
-    const timeoutId = window.setTimeout(() => setTime(formatTime()), 0);
-    const intervalId = window.setInterval(() => setTime(formatTime()), 1000);
-
-    return () => {
-      window.clearTimeout(timeoutId);
-      window.clearInterval(intervalId);
-    };
-  }, []);
-
-  return time;
-}
 
 function useDecryptText(
   text: string,
@@ -104,7 +87,6 @@ export default function ProfileSummary() {
   const tiltRef = useRef<HTMLDivElement>(null);
   const [triggered, setTriggered] = useState(false);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
-  const localTime = useLocalTime();
 
   const nameDuration =
     100 + profileCard.name.replace(/\s/g, "").length * 52;
@@ -261,21 +243,46 @@ export default function ProfileSummary() {
           </blockquote>
         </div>
 
-        <div className="order-4 grid grid-cols-2 border-t border-[#d4a843]/20 md:col-start-2 md:row-start-3 md:grid-cols-4">
-          <div className="border-b border-r border-[#d4a843]/15 p-4 md:border-b-0 lg:p-5 xl:p-6">
+        <div className="order-4 grid grid-cols-2 border-t border-[#d4a843]/20 md:col-start-2 md:row-start-3 md:grid-cols-3 xl:grid-cols-5">
+          <div className="border-b border-r border-[#d4a843]/15 p-4 lg:p-5 xl:border-b-0 xl:p-6">
             <p className="mb-1 font-mono text-[8px] tracking-[0.12em] text-[#a8c5c2]/55 lg:text-[9px] xl:text-[10px]">AVAILABILITY</p>
             <p className="font-mono text-[11px] font-semibold text-[#5dcaa5] lg:text-[13px] xl:text-sm">{profileCard.stats.availability}</p>
             <p className="mt-1 font-mono text-[8px] text-[#a8c5c2]/55 lg:text-[9px] xl:text-[10px]">{profileCard.stats.availabilitySub}</p>
           </div>
-          <div className="border-b border-[#d4a843]/15 p-4 md:border-b-0 md:border-r lg:p-5 xl:p-6">
-            <p className="mb-1 font-mono text-[8px] tracking-[0.12em] text-[#a8c5c2]/55 lg:text-[9px] xl:text-[10px]">LOCAL TIME</p>
-            <p className="font-mono text-[11px] leading-snug text-[#e8d5a3] lg:text-[13px] xl:text-sm">{localTime}</p>
-            <p className="mt-1 font-mono text-[8px] text-[#a8c5c2]/55 lg:text-[9px] xl:text-[10px]">{profileCard.stats.timezone}</p>
-          </div>
-          <div className="border-r border-[#d4a843]/15 p-4 lg:p-5 xl:p-6">
-            <p className="mb-1 font-mono text-[8px] tracking-[0.12em] text-[#a8c5c2]/55 lg:text-[9px] xl:text-[10px]">LOCATION</p>
-            <p className="whitespace-pre-line font-mono text-[11px] leading-snug text-[#e8d5a3] lg:text-[13px] xl:text-sm">{profileCard.stats.location}</p>
-          </div>
+          <a
+            href={contactLinks.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group/contact border-b border-r border-[#d4a843]/15 p-4 transition-colors hover:bg-[#d4a843]/8 lg:p-5 xl:border-b-0 xl:p-6"
+          >
+            <p className="mb-1 flex items-center gap-1.5 font-mono text-[8px] tracking-[0.12em] text-[#a8c5c2]/55 lg:text-[9px] xl:text-[10px]">
+              <Linkedin className="h-3 w-3" /> LINKEDIN
+            </p>
+            <p className="font-mono text-[11px] leading-snug text-[#e8d5a3] transition-colors group-hover/contact:text-[#d4a843] lg:text-[13px] xl:text-sm">{profileCard.stats.linkedin}</p>
+            <p className="mt-1 font-mono text-[8px] text-[#a8c5c2]/55 lg:text-[9px] xl:text-[10px]">Connect professionally.</p>
+          </a>
+          <a
+            href={contactLinks.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group/contact border-b border-[#d4a843]/15 p-4 transition-colors hover:bg-[#d4a843]/8 md:border-r lg:p-5 xl:border-b-0 xl:p-6"
+          >
+            <p className="mb-1 flex items-center gap-1.5 font-mono text-[8px] tracking-[0.12em] text-[#a8c5c2]/55 lg:text-[9px] xl:text-[10px]">
+              <Github className="h-3 w-3" /> GITHUB
+            </p>
+            <p className="font-mono text-[11px] leading-snug text-[#e8d5a3] transition-colors group-hover/contact:text-[#d4a843] lg:text-[13px] xl:text-sm">{profileCard.stats.github}</p>
+            <p className="mt-1 font-mono text-[8px] text-[#a8c5c2]/55 lg:text-[9px] xl:text-[10px]">Explore the code.</p>
+          </a>
+          <a
+            href={contactLinks.email}
+            className="group/contact border-r border-[#d4a843]/15 p-4 transition-colors hover:bg-[#d4a843]/8 lg:p-5 xl:p-6"
+          >
+            <p className="mb-1 flex items-center gap-1.5 font-mono text-[8px] tracking-[0.12em] text-[#a8c5c2]/55 lg:text-[9px] xl:text-[10px]">
+              <Mail className="h-3 w-3" /> EMAIL
+            </p>
+            <p className="whitespace-nowrap font-mono text-[10px] leading-snug tracking-[-0.03em] text-[#e8d5a3] transition-colors group-hover/contact:text-[#d4a843] sm:text-[11px] lg:text-[10px] 2xl:text-xs">{profileCard.stats.email}</p>
+            <p className="mt-1 font-mono text-[8px] text-[#a8c5c2]/55 lg:text-[9px] xl:text-[10px]">Start a conversation.</p>
+          </a>
           <div className="p-4 lg:p-5 xl:p-6">
             <p className="mb-1 font-mono text-[8px] tracking-[0.12em] text-[#a8c5c2]/55 lg:text-[9px] xl:text-[10px]">CURRENT FOCUS</p>
             <p className="font-mono text-[11px] leading-snug text-[#e8d5a3] lg:text-[13px] xl:text-sm">{profileCard.stats.focus}</p>

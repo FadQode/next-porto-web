@@ -34,8 +34,9 @@ export type ProfileContent = {
     stats: {
       availability: string;
       availabilitySub: string;
-      location: string;
-      timezone: string;
+      linkedin: string;
+      github: string;
+      email: string;
       focus: string;
       focusSub: string;
     };
@@ -56,8 +57,9 @@ export const profileCard = {
   stats: {
     availability: "Open to work",
     availabilitySub: "Let's build together.",
-    location: "Surakarta,\nIndonesia",
-    timezone: "WIB (UTC+7)",
+    linkedin: "fadhil-erdya",
+    github: "@fadqode",
+    email: "connect@fadqash.dev",
     focus: "AI · Web · Data",
     focusSub: "Building & shipping.",
   },

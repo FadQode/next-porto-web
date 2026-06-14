@@ -20,6 +20,6 @@ export const contactLinks = {
   whatsapp: "https://wa.me/+6281358301954",
   linkedin: "https://linkedin.com/in/fadhil-erdya",
   github: "https://github.com/fadqode",
-  email: "mailto:fadhileq28@email.com?subject=Let's%20Connect&body=Hi%20Fadhil,",
+  email: "mailto:connect@fadqash.dev?subject=Let's%20Connect&body=Hi%20Fadhil,",
   huggingFace: "https://huggingface.co/FadQ",
 };
