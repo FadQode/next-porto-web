@@ -149,7 +149,10 @@ export default function ProfileSummary() {
   };
 
   const scrollToContact = () => {
-    document.querySelector("footer")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("contact")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   };
 
   return (

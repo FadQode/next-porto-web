@@ -5,16 +5,28 @@ import GradientText from "@/components/GradientText";
 
 const HeroSection = () => {
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, selector: string) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  const element = document.querySelector(selector);
-  if (element) {
-    element.scrollIntoView({
+    const element = document.querySelector<HTMLElement>(selector);
+    if (!element) return;
+
+    const revealWrapper = element.closest<HTMLElement>("[data-scroll-reveal]");
+    const target = revealWrapper ?? element;
+    const navbarHeight =
+      document.querySelector<HTMLElement>("nav")?.offsetHeight ?? 64;
+
+    let targetTop = 0;
+    let current: HTMLElement | null = target;
+    while (current) {
+      targetTop += current.offsetTop;
+      current = current.offsetParent as HTMLElement | null;
+    }
+
+    window.scrollTo({
+      top: Math.max(0, targetTop - navbarHeight),
       behavior: "smooth",
-      block: "start",
     });
-  }
-};
+  };
   return (
     <section
       id="hero"

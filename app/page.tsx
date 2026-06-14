@@ -6,6 +6,7 @@ import ProjectSection from "@/public/section/Projects";
 import EducationSection from "@/public/section/Education";
 import SkillsSection from "@/public/section/skills";
 import Footer from "@/public/section/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 
 
 const Home = () => {
@@ -13,11 +14,27 @@ const Home = () => {
     <div className="min-h-screen bg-[#2d626a]">
       <Navbar />
       <Hero/>
-      <Profile/>
-      <EducationSection/>
-      <SkillsSection/>
-      <ProjectSection/>
-      <Footer />
+      <ScrollReveal index={0}>
+        <Profile/>
+      </ScrollReveal>
+      <ScrollReveal index={1}>
+        <EducationSection/>
+      </ScrollReveal>
+      <ScrollReveal index={2}>
+        <SkillsSection/>
+      </ScrollReveal>
+      <ScrollReveal index={3}>
+        <ProjectSection/>
+      </ScrollReveal>
+      <ScrollReveal
+        index={4}
+        distance={36}
+        enableBlur={false}
+        baseRotation={0.5}
+        revealEnd="top 88%"
+      >
+        <Footer />
+      </ScrollReveal>
 
 
       {/* <PlatformSection />

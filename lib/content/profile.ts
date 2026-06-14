@@ -51,7 +51,7 @@ export const profileCard = {
   quote: "Keep learning. Keep building. Keep improving.",
   cta: {
     resume: "Resume",
-    contact: "Hire Me",
+    contact: "Let's Connect",
   },
   stats: {
     availability: "Open to work",

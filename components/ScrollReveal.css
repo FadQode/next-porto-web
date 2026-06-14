@@ -1,0 +1,13 @@
+.scroll-reveal-section {
+  position: relative;
+  transform-origin: 50% 35%;
+  will-change: transform, opacity, filter;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal-section {
+    filter: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

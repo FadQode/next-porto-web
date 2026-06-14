@@ -9,7 +9,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#2d626a] border-t-4 border-[#428a91] relative overflow-hidden">
+    <footer id="contact" className="scroll-mt-16 bg-[#2d626a] border-t-4 border-[#428a91] relative overflow-hidden">
 
       {/* Scan line effect */}
       <div className="absolute inset-0 pointer-events-none opacity-10">
