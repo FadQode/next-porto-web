@@ -21,7 +21,46 @@ export type ProfileContent = {
     description: string;
     githubUsername: string;
   };
+  profileCard: {
+    badge: string;
+    name: string;
+    role: string;
+    bio: string;
+    quote: string;
+    cta: {
+      resume: string;
+      contact: string;
+    };
+    stats: {
+      availability: string;
+      availabilitySub: string;
+      location: string;
+      timezone: string;
+      focus: string;
+      focusSub: string;
+    };
+  };
   iconCloudSlugs: string[];
+};
+
+export const profileCard = {
+  badge: "THE BUILDER IN TRAINING",
+  name: "Fadhil Erdya\nQashmal",
+  role: "Early-career Software / AI Engineer",
+  bio: "I'm focused on learning by building -\nturning ideas into clean interfaces,\nuseful systems & data-driven solutions\nwhile growing one project at a time.",
+  quote: "Keep learning. Keep building. Keep improving.",
+  cta: {
+    resume: "Resume",
+    contact: "Hire Me",
+  },
+  stats: {
+    availability: "Open to work",
+    availabilitySub: "Let's build together.",
+    location: "Surakarta,\nIndonesia",
+    timezone: "WIB (UTC+7)",
+    focus: "AI · Web · Data",
+    focusSub: "Building & shipping.",
+  },
 };
 
 export const profileContent: ProfileContent = {
@@ -48,6 +87,7 @@ export const profileContent: ProfileContent = {
       "Try new things, discover the differences. It can make your life better and make you think ahead.",
     githubUsername: "FadQode",
   },
+  profileCard,
   iconCloudSlugs: [
     "typescript",
     "javascript",
