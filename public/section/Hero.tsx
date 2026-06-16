@@ -1,37 +1,34 @@
 'use client'
-import React from "react";
+import React, { useState } from "react";
 import { Sparkles } from "lucide-react";
 import GradientText from "@/components/GradientText";
+import AstralSunLoader from "@/components/preloader/AstralSunLoader";
+import { handleSectionLinkClick } from "@/lib/scroll-to-section";
 
 const HeroSection = () => {
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, selector: string) => {
-    e.preventDefault();
+  const [heroVisible, setHeroVisible] = useState(false);
+  const [loaderVisible, setLoaderVisible] = useState(true);
 
-    const element = document.querySelector<HTMLElement>(selector);
-    if (!element) return;
-
-    const revealWrapper = element.closest<HTMLElement>("[data-scroll-reveal]");
-    const target = revealWrapper ?? element;
-    const navbarHeight =
-      document.querySelector<HTMLElement>("nav")?.offsetHeight ?? 64;
-
-    let targetTop = 0;
-    let current: HTMLElement | null = target;
-    while (current) {
-      targetTop += current.offsetTop;
-      current = current.offsetParent as HTMLElement | null;
-    }
-
-    window.scrollTo({
-      top: Math.max(0, targetTop - navbarHeight),
-      behavior: "smooth",
-    });
-  };
   return (
-    <section
-      id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
-    >
+    <>
+      {loaderVisible && (
+        <AstralSunLoader
+          onRevealStart={() => setHeroVisible(true)}
+          onComplete={() => setLoaderVisible(false)}
+        />
+      )}
+
+      <section
+        id="hero"
+        className={`relative min-h-screen flex items-center justify-center overflow-hidden pt-16 transition-all duration-[950ms] ease-out ${
+          heroVisible
+            ? "translate-y-0 scale-100 opacity-100 blur-0"
+            : "translate-y-5 scale-[1.025] opacity-0 blur-sm"
+        }`}
+        style={{
+          clipPath: heroVisible ? "circle(160% at 86% 18%)" : "circle(0% at 86% 18%)",
+        }}
+      >
       {/* Animation styles */}
       <style>{`
         @keyframes float-slow {
@@ -136,6 +133,7 @@ const HeroSection = () => {
         <div className="flex flex-wrap justify-center gap-4">
           <a
             href="#quests"
+            onClick={(event) => handleSectionLinkClick(event, "#quests")}
             className="group relative px-8 py-3 rounded-full bg-[#eab308] text-slate-900 font-semibold text-sm sm:text-base tracking-wide overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#eab308]/40"
           >
             <span className="relative z-10">Explore the Work</span>
@@ -144,6 +142,7 @@ const HeroSection = () => {
 
           <a
             href="#education"
+            onClick={(event) => handleSectionLinkClick(event, "#education")}
             className="group relative px-8 py-3 rounded-full border border-slate-400/60 text-slate-100 font-semibold text-sm sm:text-base tracking-wide overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:text-slate-900"
           >
             <span className="relative z-10">Behind the Journey</span>
@@ -156,7 +155,7 @@ const HeroSection = () => {
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
           <a
               href="#profile"
-              onClick={(e) => scrollToSection(e, "#profile")}
+              onClick={(event) => handleSectionLinkClick(event, "#profile")}
               className="block cursor-pointer"
             >
             <div className="w-7 h-11 border border-slate-400/70 rounded-full flex items-start justify-center p-2">
@@ -165,6 +164,7 @@ const HeroSection = () => {
           </a>
         </div>
       </section>
+    </>
   );
 };
 

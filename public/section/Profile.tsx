@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { profileContent } from "@/lib/content/profile";
 import { contactLinks } from "@/lib/content/site";
+import { scrollToSection } from "@/lib/scroll-to-section";
 
 const SCRAMBLE_CHARS =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%";
@@ -131,10 +132,7 @@ export default function ProfileSummary() {
   };
 
   const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    scrollToSection("#contact");
   };
 
   return (
