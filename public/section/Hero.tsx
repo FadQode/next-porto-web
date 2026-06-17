@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Sparkles } from "lucide-react";
 import GradientText from "@/components/GradientText";
+import GalaxyStarfield from "@/components/GalaxyStarfield";
 import AstralSunLoader from "@/components/preloader/AstralSunLoader";
 import { handleSectionLinkClick } from "@/lib/scroll-to-section";
 
@@ -69,6 +70,8 @@ const HeroSection = () => {
         <div className="pointer-events-none absolute -top-32 -left-24 h-72 w-72 rounded-full bg-[#38bdf8]/30 blur-3xl animate-float-slow" />
         <div className="pointer-events-none absolute -bottom-40 -right-10 h-96 w-96 rounded-full bg-[#22c55e]/25 blur-3xl animate-float-reverse" />
         <div className="pointer-events-none absolute top-1/2 left-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#eab308]/10 blur-3xl animate-pulse-slow" />
+
+        <GalaxyStarfield className="pointer-events-none opacity-90 mix-blend-screen" />
 
         {/* Subtle grid overlay */}
         <div
