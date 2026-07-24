@@ -7,6 +7,7 @@ import freeProject from "@/public/asset/Project-Pics/free.jpeg";
 import gfaNews from "@/public/asset/Project-Pics/gfa.jpeg";
 import gemastik from "@/public/asset/Project-Pics/gemastik.png";
 import umrahTravel from "@/public/asset/Project-Pics/umrah-travel.png";
+import access from "@/public/asset/Project-Pics/Access.png";
 import type { StaticImageData } from "next/image";
 
 export type ProjectStatus = "completed" | "in-progress";
@@ -19,7 +20,7 @@ export type Project = {
   technologies: string[];
   githubUrl: string;
   liveUrl?: string;
-  image: StaticImageData | string;
+  image?: StaticImageData | string;
   completionDate: string;
 };
 
@@ -134,5 +135,22 @@ export const projectContent: Project[] = [
     image: umrahTravel,
     completionDate: "2025-06",
 
+  },
+  {
+    id: 10,
+    title: "ACCESS — AI-Powered Customer Support Platform",
+    description:
+      "AI-powered customer support platform for complaint management, HEAT-based response suggestions, reference-backed replies, escalation workflows, manager action requests, and performance analytics.",
+    status: "completed",
+    technologies: [
+      "Full-Stack Development",
+      "AI/ML",
+      "Customer Support",
+      "Backend API",
+      "Analytics",
+    ],
+    githubUrl: "",
+    image: access,
+    completionDate: "2026",
   }
 ];

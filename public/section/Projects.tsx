@@ -102,13 +102,17 @@ const ProjectSection = () => {
 
               {/* IMAGE */}
               <div className="relative h-48 overflow-hidden">
-                <Image
-                    src={project.image}
-                    alt={project.title}
-                    width={400}
-                    height={400}
-                    className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
-                  />
+                {project.image ? (
+                  <Image
+                      src={project.image}
+                      alt={project.title}
+                      width={400}
+                      height={400}
+                      className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                    />
+                ) : (
+                  <div className="h-full w-full bg-[radial-gradient(circle_at_30%_20%,rgba(234,188,58,0.28),transparent_32%),linear-gradient(135deg,rgba(45,98,106,0.9),rgba(11,17,32,0.95))]" />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0b1120] to-transparent" />
                 {/* STATUS */}
                 <div

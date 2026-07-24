@@ -63,4 +63,13 @@ export const experienceTimelineContent: TimelineItem[] = [
     description:
       "Built and tested multiple model approaches across computer vision, tabular data, video, and LLM tasks.",
   },
+  {
+    id: 4,
+    title: "International Young Scientist Fair 2026 — Gold Medalist",
+    subtitle: "Research & Innovation · AI/ML · Health Technology",
+    period: "2026",
+    image: "/asset/posturely.JPG",
+    description:
+      "Participated as part of the Posturely team, contributed to the English research article structure, communicated the technical concept to an international audience, and presented across an 8-minute presentation and 7-minute Q&A session.",
+  },
 ];
